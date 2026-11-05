@@ -1,48 +1,116 @@
 <!doctype html>
+<!--
+  Diseño basado en Mercer Lite, de Mike Smith Design (https://github.com/mikesmithdesign/mercer-lite).
+  Licencia de la plantilla en LICENSE-plantilla.md.
+-->
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>sukima-labs</title>
+<title>sukima-labs · herramientas para los huecos</title>
 <meta name="description" content="Herramientas pequeñas y útiles para los huecos que nadie cubre. Sin cookies ni analítica.">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="dark">
 <meta name="google-site-verification" content="s1TIlbmjL93XM59QImM3-l1OtaMeNN7oV5-nbAHBfOQ">
 <link rel="canonical" href="https://sukima-labs.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="sukima-labs">
+<meta property="og:description" content="Herramientas pequeñas y útiles para los huecos que nadie cubre.">
+<meta property="og:url" content="https://sukima-labs.github.io/">
+<script>document.documentElement.className="js"</script>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<style>
-:root{--fondo:#ffffff;--texto:#343a40;--suave:#6c757d;--linea:#dee2e6;--via:#4582ec;--tarjeta:#f8f9fa}
-@media (prefers-color-scheme:dark){:root{--fondo:#1b1e22;--texto:#e9ecef;--suave:#adb5bd;--linea:#343a40;--via:#6ea1f5;--tarjeta:#23272b}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--fondo);color:var(--texto);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:720px;margin:0 auto;padding:56px 16px 40px}
-h1{font-size:2.2rem;line-height:1.15;margin:0 0 .3em}
-.kanji{color:var(--suave);font-weight:400;font-size:1.2rem;margin-left:.4em}
-.lema{font-family:Georgia,serif;font-size:1.2rem;color:var(--suave);margin:0 0 2.2em}
-h2{font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:var(--suave);margin:2em 0 .8em}
-.proyecto{display:block;border:1px solid var(--linea);background:var(--tarjeta);border-radius:8px;padding:18px 20px;color:inherit;text-decoration:none}
-.proyecto:hover{border-color:var(--via)}
-.proyecto strong{color:var(--via);font-size:1.15rem}
-.proyecto p{margin:.3em 0 0}
-.meta{color:var(--suave);font-size:.9rem}
-a{color:var(--via)}
-footer{margin-top:3em;padding-top:1em;border-top:1px solid var(--linea);color:var(--suave);font-size:.9rem}
-</style>
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main>
-  <h1>sukima-labs<span class="kanji" lang="ja">隙間</span></h1>
-  <p class="lema"><i>Sukima</i> es «el hueco entre las cosas». Hacemos herramientas pequeñas y útiles para los huecos que nadie cubre.</p>
 
-  <h2>Proyectos</h2>
-  <a class="proyecto" href="finde/">
-    <strong>Finde</strong>
-    <p>Escapadas de fin de semana desde Madrid, en coche o en tren y coche de alquiler. Eliges las ciudades y el tiempo en cada una, y te dice si llegas a casa el domingo a tu hora.</p>
-    <p class="meta">Web · código abierto · <span lang="en">English</span> en <span>finde/en/</span></p>
-  </a>
+<header class="top">
+  <div class="wrap">
+    <span class="who">sukima-labs</span>
+    <a class="mailto" href="https://github.com/sukima-labs">GitHub</a>
+  </div>
+</header>
 
-  <footer>
-    Sin cookies ni analítica. Código en <a href="https://github.com/sukima-labs">github.com/sukima-labs</a>.
-  </footer>
-</main>
+<section class="hero">
+  <div class="wrap">
+    <h1>Herramientas para los huecos<span class="stop">.</span></h1>
+    <p class="h-sub"><span lang="ja">隙間</span>, <i>sukima</i>, es «el hueco entre las cosas». Hacemos herramientas pequeñas y útiles para lo que nadie cubre: lo que se hace a mano, con diez pestañas abiertas o con una hoja de cálculo que nadie se atreve a&nbsp;tocar.</p>
+    <div class="h-cta">
+      <a class="btn" href="#proyectos">Ver los proyectos &rarr;</a>
+    </div>
+  </div>
+  <div class="h-foot">
+    <div class="wrap">
+      <span><i class="dot" aria-hidden="true"></i>un hueco cada vez</span>
+      <span>madrid</span>
+    </div>
+  </div>
+</section>
+
+<div class="names">
+  <div class="wrap">
+    <p>herramientas pequeñas</p>
+    <p>sin cookies ni <b>analítica</b></p>
+    <p>gratis y sin registro cuando se puede</p>
+  </div>
+</div>
+
+<section class="entries" id="proyectos">
+  <div class="wrap">
+    <h2>Los proyectos<span class="stop">.</span></h2>
+    <div class="workgrid">
+      <article class="proj reveal">
+        <a class="shot" href="finde/"><img src="img/finde.jpg" alt="Finde: mapa de España con las rutas de fin de semana que salen de Madrid" width="1200" height="630"></a>
+        <div class="p-cap">
+          <h3><a href="finde/">Finde</a></h3>
+          <p>Planear una escapada de fin de semana desde Madrid es abrir diez pestañas de mapas para saber si da&nbsp;tiempo.</p>
+          <p class="p-outcome">Eliges un circuito o tus ciudades y el tiempo en cada una, y te dice si llegas a casa el domingo a tu hora, con los peajes y la alternativa sin&nbsp;ellos.</p>
+          <div class="p-meta"><span><b>viajes</b></span><span>en coche o en tren</span><span>código abierto</span><span><a href="finde/en/" lang="en">english</a></span><span>2026</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="kind">
+  <div class="wrap">
+    <figure>
+      <blockquote>Una herramienta que hace una cosa bien vale más que una plataforma que lo promete&nbsp;todo.</blockquote>
+      <figcaption>cómo trabajamos</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="booking">
+  <div class="wrap">
+    <p class="avail"><span class="dot"></span>lo siguiente</p>
+    <h2>¿Qué hueco te molesta a&nbsp;ti?</h2>
+    <p>Si haces algo a mano cada semana y debería existir una herramienta para eso, es justo lo que buscamos.</p>
+    <a class="bigmail" href="https://github.com/sukima-labs">github.com/sukima-labs</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-line">
+      <span class="fbrand">sukima-labs</span>
+      <span>madrid</span>
+      <a href="https://github.com/sukima-labs">GitHub</a>
+      <span>&copy; sukima-labs 2026</span>
+    </div>
+    <p class="foot-disc">Sin cookies ni analítica: la página no pide nada a otros sitios. Diseño basado en Mercer Lite, de <a href="https://mikesmithdesign.co.uk/themes/mercer">Mike Smith Design</a>.</p>
+  </div>
+</footer>
+
+<script>
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+  e.preventDefault();
+  document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth' });
+}));
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), { threshold: .16 });
+document.querySelectorAll('.reveal').forEach(el => REDUCED ? el.classList.add('in') : io.observe(el));
+</script>
 </body>
 </html>
