@@ -1,8 +1,19 @@
 # sukima-labs.github.io
 
-Portada de la organización [sukima-labs](https://github.com/sukima-labs): <https://sukima-labs.github.io/>.
+Portada de **Sukima Labs** ([github.com/sukima-labs](https://github.com/sukima-labs)): <https://sukima-labs.github.io/>.
 
-HTML estático a mano, sin generador, sobre la plantilla gratuita [Mercer Lite](https://github.com/mikesmithdesign/mercer-lite) de Mike Smith Design (licencia en `LICENSE-plantilla.md`: uso comercial libre, no se puede revender la plantilla). Cambios: acento azul de Finde, sin Lenis ni ningún script de terceros, fuentes alojadas aquí (Archivo, IBM Plex Mono y Chakra Petch, las tres con licencia SIL OFL 1.1: sus textos están en `fonts/OFL-*.txt` y tienen que viajar con los ficheros). Cada proyecto con GitHub Pages cuelga de aquí (`/finde/` lo sirve el repo `finde`), así que la propiedad de Google Search Console de la raíz los cubre a todos.
+## Marca
+
+`marca/` es la fuente única de la identidad v1.1 para todos los proyectos de Sukima Labs:
+
+- `marca/marca.css`: tokens (`--sk-*`: colores, letra, tamaños mínimos, área de seguridad, tema claro y oscuro). Los demás proyectos enlazan <https://sukima-labs.github.io/marca/marca.css> en vez de copiarlo.
+- `marca/logo/`: isotipo y logotipos en SVG (el texto ya convertido a trazos, para que no dependa de la letra instalada) y los favicons.
+- `marca/fuentes/`: DejaVu Sans en woff2 (subconjunto latino) y su licencia, que tiene que viajar con los ficheros.
+- `marca/REGLAS.md`: reglas cortas, cada una con su manual y página. `marca/COBERTURA.md`: cada regla de los 8 manuales y dónde se aplica o por qué no.
+
+Los manuales originales están en el kDrive de la organización (`Marca/v1.1 - Entrega integral logotipo 04/`), no aquí.
+
+HTML estático a mano, sin generador, sobre la plantilla gratuita [Mercer Lite](https://github.com/mikesmithdesign/mercer-lite) de Mike Smith Design (licencia en `LICENSE-plantilla.md`: uso comercial libre, no se puede revender la plantilla). Cambios: colores, letra y logotipo de la identidad de marca v1.1 (`marca/`), sin Lenis ni ningún script de terceros. Cada proyecto con GitHub Pages cuelga de aquí (`/finde/` lo sirve el repo `finde`), así que la propiedad de Google Search Console de la raíz los cubre a todos.
 
 - **No quitar** la etiqueta `google-site-verification` de `index.html`: es la verificación de Search Console.
 - Proyecto nuevo publicado → un `<article class="proj">` en `index.html` (imagen 1200×630 en `img/`, sirve la de compartir del proyecto) y línea en `sitemap.xml`.
