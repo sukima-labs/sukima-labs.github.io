@@ -109,7 +109,14 @@ h1,h2,h3{font-family:var(--disp);color:var(--ink);font-weight:700;line-height:.9
 .f-step{font-family:var(--disp);font-weight:700;font-size:clamp(16px,2.2vw,30px);color:var(--ink);
   border:2px solid var(--rule);border-radius:2px;padding:10px 20px;white-space:nowrap;
   animation:walk 10.8s steps(1,end) infinite;animation-delay:calc(var(--i)*1.8s)}
-.f-step:hover,.f-step:focus-visible{background:var(--spot)!important;color:var(--spot-ink)!important;
+.f-step{touch-action:manipulation;user-select:none}
+/* el estado hover solo en dispositivos con ratón: en el táctil deja un
+   brillo pegado que tapa el estado controlado por JS */
+@media(hover:hover){
+  .f-step:hover{background:var(--spot)!important;color:var(--spot-ink)!important;
+    border-color:var(--spot)!important;animation-play-state:paused}
+}
+.f-step:focus-visible{background:var(--spot)!important;color:var(--spot-ink)!important;
   border-color:var(--spot)!important;animation-play-state:paused}
 .f-step.active{background:var(--spot)!important;color:var(--spot-ink)!important;border-color:var(--spot)!important}
 .f-steps.paused .f-step{animation-play-state:paused!important}
