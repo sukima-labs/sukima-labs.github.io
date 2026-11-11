@@ -99,8 +99,9 @@ h1,h2,h3{font-family:var(--disp);color:var(--ink);font-weight:700;line-height:.9
 /* ---------- one quote, said loudly ---------- */
 .kind{border-top:2px solid var(--rule);padding:clamp(60px,9vh,110px) 0}
 .f-steps{display:flex;flex-wrap:wrap;gap:12px 10px;align-items:center}
-/* móvil: el circuito baja en vertical, flechas giradas, sin renglones rotos */
-@media(max-width:700px){
+/* táctil o pantallas estrechas: el circuito baja en vertical — un celular en
+   modo escritorio (viewport ancho) también entra por ser dispositivo táctil */
+@media(pointer:coarse),(max-width:700px){
   .f-steps{flex-direction:column;align-items:stretch;gap:6px}
   .f-step{width:100%;text-align:center;padding:13px 16px}
   .f-arrow{transform:rotate(90deg);align-self:center}
@@ -167,6 +168,7 @@ h1,h2,h3{font-family:var(--disp);color:var(--ink);font-weight:700;line-height:.9
 .m-valores li{display:flex;gap:10px 24px;flex-wrap:wrap;align-items:baseline;
   border-top:2px solid var(--rule-soft);padding:14px 0}
 .m-valores b{color:var(--ink);font-weight:600;min-width:22ch}
+.v-ind{font-family:var(--mono);font-size:11px;letter-spacing:.02em;color:var(--quiet)}
 .m-src{margin-top:clamp(26px,4vh,40px);font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;
   text-transform:lowercase;color:var(--quiet)}
 
