@@ -1,29 +1,31 @@
 <!doctype html>
-<!-- Fuente de img/og.jpg (vista previa en WhatsApp y redes). No se enlaza desde la web.
+<!-- Fuente de img/og-v2.png (vista previa en WhatsApp y redes). No se enlaza desde la web.
      Regenerar: servir la raíz del repo y fotografiar esta página a 1200x630 con Chrome sin interfaz. -->
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="../fonts.css">
 <style>
-:root{--bg:#0A0B09;--ink:#F4F4F2;--quiet:rgba(244,244,242,.55);--rule:rgba(244,244,242,.22);--spot:#8fb4f4;--spot-ink:#10213f}
+:root{--bg:#10131C;--ink:#F5F4F0;--quiet:rgba(245,244,240,.6);--rule:rgba(245,244,240,.22);--spot:#14C6D4}
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{width:1200px;height:630px;overflow:hidden;background:var(--bg)}
-body{display:flex;flex-direction:column;font-family:"Archivo",system-ui,sans-serif}
-.top{display:flex;justify-content:space-between;align-items:center;padding:0 72px;height:96px;border-bottom:3px solid var(--rule)}
-.who{font-family:"Chakra Petch","Archivo",sans-serif;font-weight:700;font-size:34px;color:var(--ink);letter-spacing:-.02em}
+html,body{width:1200px;height:630px;overflow:hidden}
+body{display:flex;flex-direction:column;font-family:"DejaVu Sans",Arial,sans-serif;background:var(--bg);
+background-image:radial-gradient(ellipse 90% 55% at 50% -8%,rgba(113,72,245,.25),transparent 70%),linear-gradient(rgba(20,198,212,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(20,198,212,.05) 1px,transparent 1px);background-size:auto,48px 48px,48px 48px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:0 72px;height:104px;border-bottom:3px solid var(--rule)}
+.who{font-weight:700;font-size:36px;color:var(--ink);letter-spacing:-.01em}
 .who::after,.stop{color:var(--spot)}
 .who::after{content:"."}
 .url{font-family:"IBM Plex Mono",monospace;font-size:24px;color:var(--quiet)}
 .main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 72px}
-h1{font-family:"Chakra Petch","Archivo",sans-serif;font-weight:700;color:var(--ink);font-size:104px;line-height:.95;letter-spacing:-.03em;max-width:11ch}
-.bar{background:var(--spot);color:var(--spot-ink);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 72px;font-family:"IBM Plex Mono",monospace;font-size:24px}
-.bar i{display:inline-block;width:14px;height:14px;background:var(--spot-ink);margin-right:16px}
+.kicker{font-family:"IBM Plex Mono",monospace;font-size:22px;color:var(--spot);margin-bottom:20px}
+h1{font-weight:700;color:var(--ink);font-size:88px;line-height:1.04;letter-spacing:-.01em;max-width:16ch;text-shadow:0 0 46px rgba(20,198,212,.25)}
+.bar{background:var(--spot);color:#10131C;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 72px;font-family:"IBM Plex Mono",monospace;font-size:24px}
+.bar i{display:inline-block;width:14px;height:14px;background:#10131C;margin-right:16px}
 </style>
 </head>
 <body>
-  <div class="top"><span class="who">sukima-labs</span><span class="url">sukimalabs.com</span></div>
-  <div class="main"><h1>Herramientas para los huecos<span class="stop">.</span></h1></div>
-  <div class="bar"><span><i></i>herramientas pequeñas y útiles</span><span>sin cookies ni analítica</span></div>
+  <div class="top"><span class="who">Sukima Labs</span><span class="url">sukimalabs.com</span></div>
+  <div class="main"><p class="kicker">laboratorio global de posibilidades</p><h1>El espacio donde nacen nuevas posibilidades<span class="stop">.</span></h1></div>
+  <div class="bar"><span><i></i>exploración, diseño y ejecución</span><span>sin analítica propia</span></div>
 </body>
 </html>

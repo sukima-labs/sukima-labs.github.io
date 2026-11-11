@@ -18,4 +18,4 @@ HTML estático a mano, sin generador, sobre la plantilla gratuita [Mercer Lite](
 - **No quitar** la etiqueta `google-site-verification` de `index.html`: es la verificación de Search Console.
 - Proyecto nuevo publicado → un `<article class="proj">` en `index.html` (imagen 1200×630 en `img/`, sirve la de compartir del proyecto) y línea en `sitemap.xml`.
 
-- La vista previa al compartir el enlace (WhatsApp, redes) es `img/og.jpg`, que sale de `herramientas/og.html`: si cambia el titular o los colores, se regenera fotografiando esa página a 1200×630.
+- La vista previa al compartir el enlace (WhatsApp, redes) es `img/og-v2.png`, generada desde `herramientas/og.html` (diseño) con `herramientas/render-og.py` (script PIL, usa las DejaVu de `fonts/`; requiere el Python de las herramientas de Hermes). Si cambia el titular o los colores, se regenera el script y se sube la imagen nueva (el nombre con versión — og-v2, og-v3… — evita la caché de WhatsApp).
