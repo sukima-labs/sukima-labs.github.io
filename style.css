@@ -99,6 +99,12 @@ h1,h2,h3{font-family:var(--disp);color:var(--ink);font-weight:700;line-height:.9
 /* ---------- one quote, said loudly ---------- */
 .kind{border-top:2px solid var(--rule);padding:clamp(60px,9vh,110px) 0}
 .f-steps{display:flex;flex-wrap:wrap;gap:12px 10px;align-items:center}
+/* móvil: el circuito baja en vertical, flechas giradas, sin renglones rotos */
+@media(max-width:700px){
+  .f-steps{flex-direction:column;align-items:stretch;gap:6px}
+  .f-step{width:100%;text-align:center;padding:13px 16px}
+  .f-arrow{transform:rotate(90deg);align-self:center}
+}
 .f-step{font-family:var(--disp);font-weight:700;font-size:clamp(16px,2.2vw,30px);color:var(--ink);
   border:2px solid var(--rule);border-radius:2px;padding:10px 20px;white-space:nowrap;
   animation:walk 10.8s steps(1,end) infinite;animation-delay:calc(var(--i)*1.8s)}
