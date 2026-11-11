@@ -111,6 +111,9 @@ h1,h2,h3{font-family:var(--disp);color:var(--ink);font-weight:700;line-height:.9
   animation:walk 10.8s steps(1,end) infinite;animation-delay:calc(var(--i)*1.8s)}
 .f-step:hover,.f-step:focus-visible{background:var(--spot)!important;color:var(--spot-ink)!important;
   border-color:var(--spot)!important;animation-play-state:paused}
+.f-step.active{background:var(--spot)!important;color:var(--spot-ink)!important;border-color:var(--spot)!important}
+.f-steps.paused .f-step{animation-play-state:paused!important}
+.f-meaning{margin-top:clamp(14px,2vh,20px);font-family:var(--mono);font-size:13.5px;line-height:1.55;color:var(--ink);max-width:56ch}
 .f-arrow{font-family:var(--disp);font-weight:700;color:var(--spot);font-size:clamp(16px,2.2vw,30px)}
 .f-cond{margin-top:clamp(14px,2vh,20px);font-family:var(--mono);font-size:13px;letter-spacing:.02em;color:var(--quiet)}
 .kind figcaption{margin-top:22px;font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;

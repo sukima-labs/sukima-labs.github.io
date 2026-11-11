@@ -144,15 +144,16 @@
   <div class="wrap">
     <figure>
       <div class="f-steps" role="list" aria-label="Preguntar, comprender, diseñar, probar, aprender, escalar — el flujo de trabajo de Sukima Labs">
-        <span class="f-step" style="--i:0">Preguntar</span><span class="f-arrow" aria-hidden="true">→</span>
-        <span class="f-step" style="--i:1">comprender</span><span class="f-arrow" aria-hidden="true">→</span>
-        <span class="f-step" style="--i:2">diseñar</span><span class="f-arrow" aria-hidden="true">→</span>
-        <span class="f-step" style="--i:3">probar</span><span class="f-arrow" aria-hidden="true">→</span>
-        <span class="f-step" style="--i:4">aprender</span><span class="f-arrow" aria-hidden="true">→</span>
-        <span class="f-step" style="--i:5">escalar</span>
+        <span class="f-step" style="--i:0" tabindex="0" data-meaning="Hacernos las preguntas correctas antes de construir: qué está pasando y a quién le importa.">Preguntar</span><span class="f-arrow" aria-hidden="true">→</span>
+        <span class="f-step" style="--i:1" tabindex="0" data-meaning="Escuchar y estudiar el problema hasta entenderlo de verdad, con evidencia.">comprender</span><span class="f-arrow" aria-hidden="true">→</span>
+        <span class="f-step" style="--i:2" tabindex="0" data-meaning="Imaginar y trazar la alternativa más simple que pueda ponerse a prueba.">diseñar</span><span class="f-arrow" aria-hidden="true">→</span>
+        <span class="f-step" style="--i:3" tabindex="0" data-meaning="Construir una prueba pequeña y medir qué pasa, sin prometer resultados.">probar</span><span class="f-arrow" aria-hidden="true">→</span>
+        <span class="f-step" style="--i:4" tabindex="0" data-meaning="Leer los resultados con honestidad: continuar, ajustar o detener, y documentar lo aprendido.">aprender</span><span class="f-arrow" aria-hidden="true">→</span>
+        <span class="f-step" style="--i:5" tabindex="0" data-meaning="Llevarlo a más personas solo cuando la evidencia lo respalde.">escalar</span>
       </div>
+      <p id="f-meaning" class="f-meaning" hidden></p>
       <p class="f-cond">cuando exista evidencia<span class="stop">.</span></p>
-      <figcaption>cómo trabajamos, según nuestro manual de identidad corporativa · pásale el cursor por los pasos</figcaption>
+      <figcaption>cómo trabajamos, según nuestro manual de identidad corporativa · toca un paso para ver qué significa</figcaption>
     </figure>
   </div>
 </section>
@@ -318,6 +319,35 @@ document.getElementById('contacto').addEventListener('submit', e => {
   window.location.href = 'mailto:' + destino + '?subject='
     + encodeURIComponent('[sukimalabs.com] ' + asunto)
     + '&body=' + encodeURIComponent(mensaje + '\n\n— enviado desde sukimalabs.com');
+});
+
+/* circuito: tocar un paso pausa la animación y muestra qué significa;
+   volver a tocar la reactiva */
+const pasos = document.querySelectorAll('.f-step');
+const fMeaning = document.getElementById('f-meaning');
+const fSteps = document.querySelector('.f-steps');
+let pasoActivo = null;
+function desactivarPaso(){
+  if (!pasoActivo) return;
+  pasoActivo.classList.remove('active');
+  fSteps.classList.remove('paused');
+  fMeaning.hidden = true;
+  pasoActivo = null;
+}
+pasos.forEach(paso => {
+  const tocar = () => {
+    if (pasoActivo === paso) { desactivarPaso(); return; }
+    desactivarPaso();
+    pasoActivo = paso;
+    paso.classList.add('active');
+    fSteps.classList.add('paused');
+    fMeaning.textContent = paso.dataset.meaning;
+    fMeaning.hidden = false;
+  };
+  paso.addEventListener('click', tocar);
+  paso.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tocar(); }
+  });
 });
 </script>
 </body>
