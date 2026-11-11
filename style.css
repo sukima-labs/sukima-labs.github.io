@@ -135,6 +135,9 @@ h1,h2,h3{font-family:var(--disp);color:var(--ink);font-weight:700;line-height:.9
   letter-spacing:-.01em;font-size:clamp(20px,3.4vw,46px);color:var(--ink);border-bottom:4px solid var(--spot);
   padding-bottom:5px;transition:color .2s}
 .booking .bigmail{color:var(--spot-ink);border-bottom-color:var(--spot-ink)}
+.booking p.b-promise{margin-top:clamp(14px,2vh,22px);font-family:var(--mono);font-size:12px;
+  letter-spacing:.03em;text-transform:lowercase;color:var(--spot-ink);opacity:.85;
+  max-width:52ch;text-align:left;line-height:1.5}
 .bigmail:hover{opacity:.75}
 
 /* ---------- footer ---------- */
