@@ -33,10 +33,14 @@ h1,h2,h3{font-family:var(--disp);color:var(--ink);font-weight:700;line-height:.9
 
 /* ---------- header ---------- */
 .top{border-bottom:2px solid var(--rule)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:64px}
-.brand{display:inline-flex;align-items:center;gap:10px}
-.brand .logo-h{height:52px;width:auto}
-@media(max-width:600px){.brand .logo-h{height:40px}}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:76px}
+.brand{display:inline-flex;align-items:center;gap:12px}
+.brand .mark{width:34px;height:34px;flex:none}
+.brand-text{display:flex;flex-direction:column;gap:1px}
+.brand-name{font-family:var(--disp);font-weight:700;font-size:23px;letter-spacing:-.01em;color:var(--ink);line-height:1}
+.brand-name::after{content:".";color:var(--spot)}
+.brand-slogan{font-family:var(--mono);font-size:11px;letter-spacing:.02em;color:var(--quiet);white-space:nowrap}
+@media(max-width:680px){.brand-slogan{display:none}.brand .mark{width:28px;height:28px}}
 .who{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:-.02em;color:var(--ink)}
 .who::after{content:".";color:var(--spot)}
 
