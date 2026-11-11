@@ -1,5 +1,22 @@
 /* Fuentes alojadas aquí: ninguna petición a terceros. Archivo es variable (400-700): un solo fichero. */
 
+/* DejaVu Sans: la tipografía oficial de la marca (brand_tokens.css). Licencia Bitstream Vera / dominio público en fonts/DEJAVU-LICENSE.txt. */
+@font-face {
+  font-family: 'DejaVu Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/DejaVuSans.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DejaVu Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/DejaVuSans-Bold.ttf') format('truetype');
+}
+
 @font-face {
   font-family: 'Archivo';
   font-style: normal;
