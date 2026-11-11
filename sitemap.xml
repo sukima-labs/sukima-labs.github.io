@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://sukima-labs.github.io/</loc></url>
-  <url><loc>https://sukima-labs.github.io/finde/</loc></url>
-  <url><loc>https://sukima-labs.github.io/finde/en/</loc></url>
-  <url><loc>https://sukima-labs.github.io/descargo/</loc></url>
-  <url><loc>https://sukima-labs.github.io/atlasonu/</loc></url>
+  <url><loc>https://sukimalabs.com/</loc></url>
+  <url><loc>https://sukimalabs.com/finde/</loc></url>
+  <url><loc>https://sukimalabs.com/finde/en/</loc></url>
+  <url><loc>https://sukimalabs.com/descargo/</loc></url>
+  <url><loc>https://sukimalabs.com/descargo/guias/</loc></url>
+  <url><loc>https://sukimalabs.com/descargo/guias/espana/</loc></url>
+  <url><loc>https://sukimalabs.com/descargo/guias/colombia/</loc></url>
+  <url><loc>https://sukimalabs.com/descargo/guias/mexico/</loc></url>
+  <url><loc>https://sukimalabs.com/descargo/guias/argentina/</loc></url>
+  <url><loc>https://sukimalabs.com/descargo/guias/chile/</loc></url>
+  <url><loc>https://sukimalabs.com/descargo/guias/peru/</loc></url>
+  <url><loc>https://sukimalabs.com/descargo/en/guides/</loc></url>
+  <url><loc>https://sukimalabs.com/descargo/en/guides/spain/</loc></url>
+  <url><loc>https://sukimalabs.com/descargo/en/guides/colombia/</loc></url>
+  <url><loc>https://sukimalabs.com/descargo/en/guides/mexico/</loc></url>
+  <url><loc>https://sukimalabs.com/descargo/en/guides/argentina/</loc></url>
+  <url><loc>https://sukimalabs.com/descargo/en/guides/chile/</loc></url>
+  <url><loc>https://sukimalabs.com/descargo/en/guides/peru/</loc></url>
+  <url><loc>https://sukimalabs.com/atlasonu/</loc></url>
 </urlset>
