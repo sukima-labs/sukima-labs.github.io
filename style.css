@@ -249,8 +249,19 @@ h1,h2,h3{font-family:var(--disp);color:var(--ink);font-weight:700;line-height:.9
   width:min(92vw,380px);border:2px solid var(--spot);border-radius:2px;background:var(--bg);
   box-shadow:0 0 44px rgba(20,198,212,.3);padding:8px}
 .music-panel iframe{display:block;width:100%;border:0;height:352px}
+.music-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 4px 10px}
+.music-title{font-family:var(--mono);font-size:12px;letter-spacing:.02em;color:var(--spot)}
+.music-close{background:transparent;border:2px solid var(--rule);border-radius:2px;color:var(--ink);
+  font-family:var(--mono);font-size:14px;width:32px;height:32px;cursor:pointer;transition:border-color .2s,color .2s}
+.music-close:hover{border-color:var(--spot);color:var(--spot)}
+/* en móvil: hoja completa desde abajo, sin tapar a ciegas */
+@media(max-width:680px){
+  .music-panel{left:8px;right:8px;bottom:0;width:auto;border-radius:2px 2px 0 0;
+    max-height:78vh;overflow:auto}
+  .music-panel iframe{height:60vh}
+  .music-pill{bottom:12px;right:12px}
+}
 @media(prefers-reduced-motion:reduce){.eq i{animation:none;height:8px}}
-@media(max-width:680px){.music-label{display:none}.music-pill{padding:10px 12px}}
 
 /* ---------- reveals ---------- */
 .js .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.6,.2,1)}
