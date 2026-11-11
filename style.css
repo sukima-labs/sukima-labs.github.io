@@ -22,7 +22,7 @@ body{background:var(--bg);color:var(--body);font-family:var(--sans);font-size:16
   background-size:auto,44px 44px,44px 44px;background-attachment:fixed}
 /* Legibilidad (WCAG 2.2 presentación visual e ISO 9241-303): interlineado >=1,5,
    lineas de <=80 caracteres, texto justificado con corte por guiones y final a la izquierda. */
-.h-sub,.p-cap p,.p-outcome,.s-body,.booking p:not(.avail),.foot-disc,.t-what,.m-block p,.m-valores li{
+.h-sub,.p-cap p,.p-outcome,.s-body,.booking p:not(.avail),.foot-disc,.t-what,.m-block p,.m-valores li,.m-prop{
   text-align:justify;hyphens:auto;-webkit-hyphens:auto;text-align-last:left;
   word-spacing:.03em;line-height:1.68}
 ::selection{background:var(--spot);color:var(--spot-ink)}
