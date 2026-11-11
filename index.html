@@ -215,16 +215,21 @@
     <p>Integramos exploración, diseño y ejecución para convertir oportunidades insuficientemente atendidas en resultados concretos. Si conoces una, es justo lo que&nbsp;buscamos.</p>
     <a class="bigmail" href="https://github.com/sukima-labs">github.com/sukima-labs</a>
     <p class="b-promise">Nos comprometemos a estudiar el problema, explicar nuestras decisiones y evaluar el&nbsp;resultado.</p>
-    <p class="b-mails">¿Prefieres el correo directo? <a href="mailto:hola@sukimalabs.com?subject=Consulta%20—%20Sukima%20Labs">hola@sukimalabs.com</a> · <a href="mailto:info@sukimalabs.com?subject=M%C3%A1s%20informaci%C3%B3n%20—%20Sukima%20Labs">info@sukimalabs.com</a></p>
+    <p class="b-mails">¿Prefieres el correo directo? <a href="mailto:hola@sukimalabs.com?subject=%C2%A1Felicidades%20o%20contacto%20—%20Sukima%20Labs"><b>hola@sukimalabs.com</b></a> — para felicitarnos o hablar con los fundadores · <a href="mailto:info@sukimalabs.com?subject=Consulta%20o%20tr%C3%A1mite%20—%20Sukima%20Labs"><b>info@sukimalabs.com</b></a> — preguntas, cuestiones, quejas y todo lo administrativo</p>
     <details class="b-form">
       <summary>o escríbenos un mensaje desde aquí</summary>
       <form id="contacto">
+        <fieldset class="c-destino">
+          <legend>¿para quién va tu mensaje?</legend>
+          <label><input type="radio" name="destino" value="hola@sukimalabs.com" checked> para felicitarnos o contactar a los fundadores — hola@</label>
+          <label><input type="radio" name="destino" value="info@sukimalabs.com"> preguntas, cuestiones, quejas o asuntos administrativos — info@</label>
+        </fieldset>
         <label for="c-asunto">asunto</label>
         <input id="c-asunto" type="text" name="asunto" placeholder="¿de qué se trata?" required>
         <label for="c-mensaje">tu mensaje</label>
-        <textarea id="c-mensaje" name="mensaje" rows="4" placeholder="cuéntanos: quién eres, qué necesitas y qué espacio quieres explorar" required></textarea>
+        <textarea id="c-mensaje" name="mensaje" rows="4" placeholder="cuéntanos lo que quieras: felicitación, pregunta, queja o trámite" required></textarea>
         <button type="submit">abrir en tu correo y enviar &rarr;</button>
-        <p class="b-form-note">no guardamos nada: esto abre tu app de correo con el mensaje listo para <b>hola@sukimalabs.com</b></p>
+        <p class="b-form-note">no guardamos nada: esto abre tu app de correo con el mensaje listo para <b>hola@</b> o <b>info@</b>, según elijas</p>
       </form>
     </details>
   </div>
@@ -288,9 +293,10 @@ mt.addEventListener('click', () => {
 /* contacto: el mini formulario abre la app de correo con todo listo (sin servidor, sin cookies) */
 document.getElementById('contacto').addEventListener('submit', e => {
   e.preventDefault();
+  const destino = document.querySelector('input[name="destino"]:checked').value;
   const asunto = document.getElementById('c-asunto').value.trim();
   const mensaje = document.getElementById('c-mensaje').value.trim();
-  window.location.href = 'mailto:hola@sukimalabs.com?subject='
+  window.location.href = 'mailto:' + destino + '?subject='
     + encodeURIComponent('[sukimalabs.com] ' + asunto)
     + '&body=' + encodeURIComponent(mensaje + '\n\n— enviado desde sukimalabs.com');
 });
