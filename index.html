@@ -226,9 +226,17 @@
       <a href="https://github.com/sukima-labs">GitHub</a>
       <span>&copy; Sukima Labs 2026</span>
     </div>
-    <p class="foot-disc">Sin cookies ni analítica: la página no pide nada a otros sitios. Diseño basado en Mercer Lite, de <a href="https://mikesmithdesign.co.uk/themes/mercer">Mike Smith Design</a>.</p>
+    <p class="foot-disc">Sin analítica: la página no lleva scripts de rastreo propios. El reproductor musical (Spotify) es la única pieza de terceros y **solo se carga si lo activas** — al activarlo, Spotify pone sus propias cookies. Diseño basado en Mercer Lite, de <a href="https://mikesmithdesign.co.uk/themes/mercer">Mike Smith Design</a>.</p>
   </div>
 </footer>
+
+<button class="music-pill" id="music-toggle" aria-expanded="false" aria-controls="music-panel">
+  <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+  <span class="music-label">banda sonora</span>
+</button>
+<div class="music-panel" id="music-panel" hidden>
+  <div id="spotify-embed"></div>
+</div>
 
 <script>
 const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -240,6 +248,29 @@ const io = new IntersectionObserver(es => es.forEach(e => {
   if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
 }), { threshold: .16 });
 document.querySelectorAll('.reveal').forEach(el => REDUCED ? el.classList.add('in') : io.observe(el));
+
+/* banda sonora: el reproductor de Spotify no se carga hasta el primer toque voluntario */
+const mt = document.getElementById('music-toggle');
+const mp = document.getElementById('music-panel');
+let spotifyCtrl = null, spotifyReady = false;
+mt.addEventListener('click', () => {
+  const abrir = mp.hidden;
+  mt.setAttribute('aria-expanded', String(abrir));
+  mp.hidden = !abrir;
+  if (!abrir) { try { spotifyCtrl && spotifyCtrl.pause(); } catch (e) {} return; }
+  if (!spotifyReady) {
+    spotifyReady = true;
+    window.onSpotifyIframeApiReady = api => {
+      api.createController(document.getElementById('spotify-embed'),
+        { uri: 'spotify:playlist:0XWS7NLNXplods9noKAHuj', width: '100%', height: '352' },
+        ctrl => { spotifyCtrl = ctrl; try { ctrl.play(); } catch (e) {} });
+    };
+    const s = document.createElement('script');
+    s.src = 'https://open.spotify.com/embed/iframe-api/v1';
+    s.async = true;
+    document.head.appendChild(s);
+  } else { try { spotifyCtrl && spotifyCtrl.play(); } catch (e) {} }
+});
 </script>
 </body>
 </html>
