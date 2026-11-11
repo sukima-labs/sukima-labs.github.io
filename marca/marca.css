@@ -1,0 +1,100 @@
+/* Sukima Labs · tokens de marca (entrega integral v1.1, identidad 04, 08-11-2026)
+   https://sukimalabs.com/marca/marca.css · reglas y citas en REGLAS.md
+
+   Solo define variables (--sk-*) y la fuente: no da estilo a ningún elemento. Enlázalo antes de
+   tu hoja y usa las variables. Cada valor cita su manual y página: [MIV p1] = 02_Manual de
+   Identidad Visual, página 1. Lo que los manuales no definen (escala de espacios, radios, sombras)
+   no está aquí a propósito: es decisión de cada proyecto, no de la marca. */
+
+/* Tipografía de referencia: DejaVu Sans [MIV p1 «Tipografía»]. Subconjunto latino en woff2,
+   licencia Bitstream Vera / Arev en fuentes/LICENSE-DejaVu.txt (tiene que viajar con los ficheros). */
+@font-face {
+  font-family: "DejaVu Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("DejaVu Sans"), local("DejaVuSans"), url("fuentes/dejavu-sans-400.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "DejaVu Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("DejaVu Sans Bold"), local("DejaVuSans-Bold"), url("fuentes/dejavu-sans-700.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  /* ---- Paleta [MIV p1 «Colores»; Lámina p1]. Valores exactos de la entrega. ---- */
+  --sk-grafito: #10131C;   /* principal */
+  --sk-cian: #14C6D4;      /* acento del umbral */
+  --sk-violeta: #7148F5;   /* comunicación (no en el símbolo) [Ficha proveedores] */
+  --sk-marfil: #F5F4F0;    /* fondo */
+  --sk-blanco: #FFFFFF;    /* versión técnica */
+  --sk-negro: #000000;     /* versión técnica */
+
+  /* ---- Tipografía [MIV p1 «Tipografía»; 03_DIGITAL/Web/brand_tokens.css] ---- */
+  --sk-fuente: "DejaVu Sans", Arial, sans-serif;
+  --sk-peso-normal: 400;
+  --sk-peso-titular: 700;   /* «SUKIMA» del logotipo va en negrita */
+
+  /* ---- Logotipo [MIV p1 «Área de seguridad», «Tamaño mínimo»] ---- */
+  --sk-isotipo-min: 32px;            /* 16 px solo tras verificar legibilidad real */
+  --sk-isotipo-min-absoluto: 16px;
+  --sk-area-seguridad: 0.15;         /* 15 % del ancho del isotipo por cada lado (provisional) */
+  /* margen libre para un isotipo de ancho W: calc(W * var(--sk-area-seguridad)) */
+
+  /* ---- Accesibilidad [MDA p1 «Contraste»: WCAG 2.2 AA]. Pares medidos (ratio de contraste):
+     grafito/marfil 16,9 · grafito/blanco 18,6 · cian/grafito 8,9 · violeta/marfil 4,8 ·
+     blanco/violeta 5,3 · violeta/grafito 3,5 (solo texto grande o bordes) ·
+     cian/marfil 1,9 y cian/blanco 2,1 (NO valen para texto ni para elementos esenciales). ---- */
+
+  /* ---- Tema claro (por defecto): versión color sobre marfil [MIV p1 «Fondos y contraste»] ---- */
+  --sk-fondo: var(--sk-marfil);
+  --sk-superficie: var(--sk-blanco);
+  --sk-texto: var(--sk-grafito);
+  --sk-texto-suave: #4A4E58;         /* 7,6:1 sobre marfil; derivado del grafito, no del manual */
+  --sk-linea: #D4D2CB;               /* separadores decorativos; derivado, no del manual */
+  --sk-enlace: var(--sk-violeta);    /* 4,8:1 sobre marfil */
+  --sk-acento: var(--sk-violeta);    /* botón: fondo violeta, texto blanco 5,3:1 */
+  --sk-acento-texto: var(--sk-blanco);
+  --sk-umbral: var(--sk-cian);       /* solo decorativo sobre claro: 1,9:1 */
+  --sk-foco: var(--sk-violeta);      /* anillo de foco ≥ 3:1 */
+  --sk-logo-marco: var(--sk-grafito);
+  --sk-logo-panel: var(--sk-cian);
+}
+
+/* ---- Tema oscuro: versión blanca sobre grafito [MIV p1 «Fondos y contraste»]. En una tinta el
+   panel cian adopta la tinta principal [MIV p1 «Versiones oficiales»]. ---- */
+@media (prefers-color-scheme: dark) {
+  :root:not(.sk-claro) {
+    --sk-fondo: var(--sk-grafito);
+    --sk-superficie: #1A1E29;          /* derivado, no del manual */
+    --sk-texto: var(--sk-marfil);
+    --sk-texto-suave: #B9BBC2;         /* 9,7:1 sobre grafito; derivado */
+    --sk-linea: #343946;
+    --sk-enlace: var(--sk-cian);       /* 8,9:1 */
+    --sk-acento: var(--sk-cian);       /* botón: fondo cian, texto grafito 8,9:1 */
+    --sk-acento-texto: var(--sk-grafito);
+    --sk-umbral: var(--sk-cian);
+    --sk-foco: var(--sk-cian);
+    --sk-logo-marco: var(--sk-blanco);
+    --sk-logo-panel: var(--sk-blanco);
+  }
+}
+/* Forzar un tema: class="sk-oscuro" o class="sk-claro" en <html>. */
+:root.sk-oscuro {
+  --sk-fondo: var(--sk-grafito);
+  --sk-superficie: #1A1E29;
+  --sk-texto: var(--sk-marfil);
+  --sk-texto-suave: #B9BBC2;
+  --sk-linea: #343946;
+  --sk-enlace: var(--sk-cian);
+  --sk-acento: var(--sk-cian);
+  --sk-acento-texto: var(--sk-grafito);
+  --sk-umbral: var(--sk-cian);
+  --sk-foco: var(--sk-cian);
+  --sk-logo-marco: var(--sk-blanco);
+  --sk-logo-panel: var(--sk-blanco);
+}
