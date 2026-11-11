@@ -17,7 +17,7 @@ body{background:var(--bg);color:var(--body);font-family:var(--sans);font-size:16
   line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 /* Legibilidad (WCAG 2.2 presentación visual e ISO 9241-303): interlineado >=1,5,
    lineas de <=80 caracteres, texto justificado con corte por guiones y final a la izquierda. */
-.h-sub,.p-cap p,.p-outcome,.s-body,.booking p:not(.avail),.foot-disc,.t-what{
+.h-sub,.p-cap p,.p-outcome,.s-body,.booking p:not(.avail),.foot-disc,.t-what,.m-block p,.m-valores li{
   text-align:justify;hyphens:auto;-webkit-hyphens:auto;text-align-last:left;
   word-spacing:.03em;line-height:1.68}
 ::selection{background:var(--spot);color:var(--spot-ink)}
@@ -92,10 +92,20 @@ h1,h2,h3{font-family:var(--disp);color:var(--ink);font-weight:700;line-height:.9
 
 /* ---------- one quote, said loudly ---------- */
 .kind{border-top:2px solid var(--rule);padding:clamp(60px,9vh,110px) 0}
-.kind blockquote{font-family:var(--disp);font-size:clamp(24px,3.4vw,48px);line-height:1.15;color:var(--ink);
-  font-weight:700;letter-spacing:-.01em;max-width:26ch;border-left:8px solid var(--spot);padding-left:clamp(20px,3vw,40px)}
+.f-steps{display:flex;flex-wrap:wrap;gap:12px 10px;align-items:center}
+.f-step{font-family:var(--disp);font-weight:700;font-size:clamp(16px,2.2vw,30px);color:var(--ink);
+  border:2px solid var(--rule);border-radius:2px;padding:10px 20px;white-space:nowrap;
+  animation:walk 10.8s steps(1,end) infinite;animation-delay:calc(var(--i)*1.8s)}
+.f-step:hover,.f-step:focus-visible{background:var(--spot)!important;color:var(--spot-ink)!important;
+  border-color:var(--spot)!important;animation-play-state:paused}
+.f-arrow{font-family:var(--disp);font-weight:700;color:var(--spot);font-size:clamp(16px,2.2vw,30px)}
+.f-cond{margin-top:clamp(14px,2vh,20px);font-family:var(--mono);font-size:13px;letter-spacing:.02em;color:var(--quiet)}
 .kind figcaption{margin-top:22px;font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;
-  text-transform:lowercase;color:var(--quiet);padding-left:clamp(28px,3.6vw,48px)}
+  text-transform:lowercase;color:var(--quiet)}
+/* el circuito recorre los pasos uno a uno, como un pulso entre umbrales */
+@keyframes walk{0%,14%{background:var(--spot);color:var(--spot-ink);border-color:var(--spot)}
+  15%,100%{background:transparent;color:var(--ink);border-color:var(--rule)}}
+.flow:hover .f-step{animation-play-state:paused}
 
 /* ---------- story / manifiesto ---------- */
 .story{border-top:2px solid var(--rule);padding:clamp(60px,9vh,110px) 0}
