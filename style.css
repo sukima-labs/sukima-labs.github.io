@@ -20,6 +20,9 @@ body{background:var(--bg);color:var(--body);font-family:var(--sans);font-size:16
     linear-gradient(rgba(20,198,212,.035) 1px,transparent 1px),
     linear-gradient(90deg,rgba(20,198,212,.035) 1px,transparent 1px);
   background-size:auto,44px 44px,44px 44px;background-attachment:fixed}
+
+/* títulos y subtítulos también justificados (la última línea queda a la izquierda) */
+h1,h2,h3,.s-lead,.s-slogan{text-align:justify;hyphens:auto;-webkit-hyphens:auto;text-align-last:left}
 /* Legibilidad (WCAG 2.2 presentación visual e ISO 9241-303): interlineado >=1,5,
    lineas de <=80 caracteres, texto justificado con corte por guiones y final a la izquierda. */
 .h-sub,.p-cap p,.p-outcome,.s-body,.booking p:not(.avail),.foot-disc,.t-what,.m-block p,.m-valores li,.m-prop{
