@@ -147,6 +147,13 @@ h1,h2,h3{font-family:var(--disp);color:var(--ink);font-weight:700;line-height:.9
 .t-what{max-width:62ch;color:var(--body)}
 .t-what b{color:var(--ink);font-weight:600}
 .s-close{margin-top:clamp(28px,4.5vh,44px);font-style:italic;color:var(--quiet)}
+.s-more{margin-top:6px}
+.s-more summary{font-family:var(--mono);font-size:13px;letter-spacing:.02em;color:var(--spot);
+  cursor:pointer;text-decoration:underline;text-underline-offset:3px;list-style:none;padding:10px 0}
+.s-more summary::-webkit-details-marker{display:none}
+.s-more summary::before{content:"▸ "}
+.s-more[open] summary::before{content:"▾ "}
+.s-more .s-time{margin-top:0}
 
 /* ---------- manual / identidad ---------- */
 .manual{border-top:2px solid var(--rule);padding:clamp(60px,9vh,110px) 0}
