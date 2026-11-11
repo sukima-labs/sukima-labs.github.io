@@ -257,6 +257,10 @@
   <span class="music-label">banda sonora</span>
 </button>
 <div class="music-panel" id="music-panel" hidden>
+  <div class="music-head">
+    <span class="music-title">♪ banda sonora · Sukima Labs</span>
+    <button class="music-close" id="music-close" aria-label="cerrar el reproductor">✕</button>
+  </div>
   <div id="spotify-embed"></div>
 </div>
 
@@ -274,12 +278,11 @@ document.querySelectorAll('.reveal').forEach(el => REDUCED ? el.classList.add('i
 /* banda sonora: el reproductor de Spotify no se carga hasta el primer toque voluntario */
 const mt = document.getElementById('music-toggle');
 const mp = document.getElementById('music-panel');
+const mx = document.getElementById('music-close');
 let spotifyCtrl = null, spotifyReady = false;
-mt.addEventListener('click', () => {
-  const abrir = mp.hidden;
-  mt.setAttribute('aria-expanded', String(abrir));
-  mp.hidden = !abrir;
-  if (!abrir) { try { spotifyCtrl && spotifyCtrl.pause(); } catch (e) {} return; }
+function cerrarMusica(){ mp.hidden = true; mt.setAttribute('aria-expanded','false'); try{spotifyCtrl&&spotifyCtrl.pause()}catch(e){} }
+function abrirMusica(){
+  mp.hidden = false; mt.setAttribute('aria-expanded','true');
   if (!spotifyReady) {
     spotifyReady = true;
     window.onSpotifyIframeApiReady = api => {
@@ -292,6 +295,12 @@ mt.addEventListener('click', () => {
     s.async = true;
     document.head.appendChild(s);
   } else { try { spotifyCtrl && spotifyCtrl.play(); } catch (e) {} }
+}
+mt.addEventListener('click', () => { mp.hidden ? abrirMusica() : cerrarMusica(); });
+mx.addEventListener('click', cerrarMusica);
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !mp.hidden) cerrarMusica(); });
+document.addEventListener('click', e => {
+  if (!mp.hidden && !mp.contains(e.target) && !mt.contains(e.target)) cerrarMusica();
 });
 
 /* contacto: el mini formulario abre la app de correo con todo listo (sin servidor, sin cookies) */
