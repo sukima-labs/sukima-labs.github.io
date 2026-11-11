@@ -184,6 +184,30 @@ h1,h2,h3{font-family:var(--disp);color:var(--ink);font-weight:700;line-height:.9
 .booking p.b-promise{margin-top:clamp(14px,2vh,22px);font-family:var(--mono);font-size:12px;
   letter-spacing:.03em;text-transform:lowercase;color:var(--spot-ink);opacity:.85;
   max-width:52ch;text-align:left;line-height:1.5}
+.b-mails{margin-top:clamp(18px,3vh,26px);font-family:var(--mono);font-size:14px;color:var(--spot-ink)}
+.b-mails a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--spot-ink);text-underline-offset:3px}
+.b-mails a:hover{opacity:.75}
+.b-form{margin-top:clamp(16px,2.5vh,24px);max-width:56ch}
+.b-form summary{font-family:var(--mono);font-size:13px;letter-spacing:.02em;color:var(--spot-ink);
+  cursor:pointer;text-decoration:underline;text-decoration-color:var(--spot-ink);text-underline-offset:3px;list-style:none}
+.b-form summary::-webkit-details-marker{display:none}
+.b-form summary::before{content:"＋ "}
+.b-form[open] summary::before{content:"− "}
+.b-form form{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.b-form label{font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;color:var(--spot-ink);text-transform:lowercase}
+.b-form input,.b-form textarea{font-family:var(--sans);font-size:15px;color:var(--bg);
+  background:var(--marfil,#F5F4F0);border:2px solid transparent;border-radius:2px;padding:10px 12px;width:100%}
+.b-form input:focus,.b-form textarea:focus{outline:2px solid var(--bg);outline-offset:2px}
+.b-form button{align-self:flex-start;font-family:var(--sans);font-weight:700;font-size:14.5px;
+  padding:12px 22px;background:var(--violeta);color:#fff;border:2px solid var(--violeta);
+  border-radius:2px;cursor:pointer}
+.b-form button:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.b-form-note{font-family:var(--mono);font-size:11px;color:var(--spot-ink);opacity:.8;text-align:left}
+.c-destino{border:2px solid rgba(16,19,28,.35);border-radius:2px;padding:10px 12px;margin:0 0 6px}
+.c-destino legend{font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;color:var(--spot-ink);padding:0 6px}
+.c-destino label{display:flex;gap:8px;align-items:flex-start;color:var(--bg);font-family:var(--sans);
+  font-size:13.5px;text-transform:none;letter-spacing:0;line-height:1.4;padding:4px 0;cursor:pointer}
+.c-destino input{accent-color:var(--bg);width:auto}
 .bigmail:hover{opacity:.75}
 
 /* ---------- footer ---------- */
