@@ -27,9 +27,10 @@
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="fonts.css?v=20261111c">
-<link rel="stylesheet" href="style.css?v=20261111f">
+<link rel="stylesheet" href="style.css?v=20261126a">
 </head>
 <body>
+<a class="skip" href="#main">Saltar al contenido</a>
 
 <header class="top">
   <div class="wrap">
@@ -44,6 +45,7 @@
   </div>
 </header>
 
+<main id="main">
 <section class="hero">
   <div class="wrap">
     <div class="h-grid">
@@ -256,6 +258,7 @@
     </details>
   </div>
 </section>
+</main>
 
 <footer class="foot">
   <div class="wrap">
@@ -285,8 +288,13 @@
 <script>
 const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
 document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+  const t = document.querySelector(a.getAttribute('href'));
+  if (!t) return;
   e.preventDefault();
-  document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth' });
+  t.scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth' });
+  // The scroll alone leaves keyboard focus behind; the next Tab must start from the target.
+  if (!t.hasAttribute('tabindex')) t.setAttribute('tabindex', '-1');
+  t.focus({ preventScroll: true });
 }));
 const io = new IntersectionObserver(es => es.forEach(e => {
   if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }

@@ -39,6 +39,10 @@ h1,h2,h3{font-family:var(--disp);color:var(--ink);font-weight:700;line-height:.9
 .wrap{max-width:1440px;margin:0 auto;padding-left:var(--gap);padding-right:var(--gap)}
 .mono{font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;color:var(--quiet);text-transform:lowercase}
 :focus-visible{outline:2px solid var(--spot);outline-offset:2px}
+@media (forced-colors:active){:focus-visible{outline-color:Highlight}}
+/* Teclado: salta la cabecera; invisible hasta que recibe el foco. */
+.skip{position:absolute;left:1rem;top:-4rem;z-index:10;padding:.5rem .9rem;background:var(--spot);color:var(--spot-ink);border-radius:4px;text-decoration:none;font-weight:600}
+.skip:focus{top:1rem}
 
 .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:700;
   font-size:15.5px;padding:16px 28px;background:var(--violeta);color:#fff;
